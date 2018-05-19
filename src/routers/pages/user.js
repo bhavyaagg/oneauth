@@ -101,6 +101,7 @@ router.post('/me/edit',
             }
             await user.save()
 
+            demographic.userId = demographic.userId || req.user.id;
             if (req.body.branchId) {
                 demographic.branchId = +req.body.branchId
             }
